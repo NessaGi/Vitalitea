@@ -1,9 +1,11 @@
 // Import the repository modules responsible for handling data operations on the tables
 const SymptomeModel = require("./models/SymptomeModel");
+const PlanteModel = require("./models/PlanteModel")
 
 // Create an empty object to hold data repositories for different tables
 const tables = {
   symptomes: new SymptomeModel(),
+  plants: new PlanteModel(),
 };
 
 /* ************************************************************************* */

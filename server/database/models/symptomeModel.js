@@ -1,6 +1,17 @@
-const db = require('../vitalitea_blend_db.sql');
+const AbstractModel = require("./AbstractModel");
 
-exports.getAll = (callback) => {
-    const query = 'SELECT * FROM symptomes';
-    db.query(query, callback);
-};
+class SymptomeModel extends AbstractModel {
+  constructor() {
+    // Appelle le constructeur de AbstractModel avec le nom de la table
+    super({ table: "symptomes" });
+  }
+
+  // Méthode pour récupérer tous les enregistrements de la table symptomes
+  async getAll() {
+    const query = `SELECT * FROM ${this.table}`;
+    const [rows] = await this.database.execute(query);
+    return rows;
+  }
+}
+
+module.exports = SymptomeModel;
