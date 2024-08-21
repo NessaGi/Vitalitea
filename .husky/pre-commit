@@ -1,4 +1,5 @@
-fileList=$(git diff --staged --name-only :^package-lock.json :^README.md :^client :^server)
+fileList=$(git diff --staged --name-only :^package-lock.json :^README.md :^.husky/commit-msg :^.husky/pre-commit :^client :^server)
+
 
 echo '----- Checking Root...'
 
