@@ -4,8 +4,8 @@ const PlanteModel = require("./models/PlanteModel")
 
 // Create an empty object to hold data repositories for different tables
 const tables = {
-  symptomes: new SymptomeModel(),
-  plants: new PlanteModel(),
+  symptome: new SymptomeModel(),
+  plante: new PlanteModel(),
 };
 
 /* ************************************************************************* */

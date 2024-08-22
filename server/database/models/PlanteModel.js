@@ -3,16 +3,16 @@ const AbstractModel = require("./AbstractModel");
 class PlanteModel extends AbstractModel {
   constructor() {
     // Appelle le constructeur de AbstractModel avec le nom de la table
-    super({ table: "plants" });
+    super({ table: "plante" });
   }
 
   // Méthode pour récupérer les plantes par symptôme
   async getBySymptome(symptomeId) {
     const query = `
-          SELECT plants.* 
-          FROM plants
-          JOIN Properties_plants ON plants.id = Properties_plants.plante_id
-          WHERE Properties_plants.property_id = ?`;
+          SELECT plante.* 
+          FROM plante
+          JOIN propertiesPlante ON plante.id = propertiesPlante.plante_id
+          WHERE propertiesPlante.property_id = ?`;
 
     const [rows] = await this.database.execute(query, [symptomeId]);
     return rows;

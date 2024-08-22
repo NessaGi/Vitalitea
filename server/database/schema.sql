@@ -1,4 +1,4 @@
-CREATE TABLE `users` (
+CREATE TABLE `user` (
     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `username` VARCHAR(255) NOT NULL,
     `email` VARCHAR(255) NOT NULL,
@@ -6,20 +6,20 @@ CREATE TABLE `users` (
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE `symptomes` (
+CREATE TABLE `symptome` (
     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `name` VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE `Tisanes` (
+CREATE TABLE `tisane` (
     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `user_id` INT,
     `name` VARCHAR(255),
     `created_at` DATE,
-    FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+    FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 );
 
-CREATE TABLE `plants` (
+CREATE TABLE `plante` (
     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `name` VARCHAR(255) NOT NULL,
     `properties` TEXT,
@@ -28,24 +28,24 @@ CREATE TABLE `plants` (
     `image_url` VARCHAR(50)
 );
 
-CREATE TABLE `Properties_plants` (
+CREATE TABLE `propertiesPlante` (
     `plante_id` INT NOT NULL,
     `property_id` INT NOT NULL,
-    FOREIGN KEY (`plante_id`) REFERENCES `plants` (`id`),
-    FOREIGN KEY (`property_id`) REFERENCES `symptomes` (`id`),
+    FOREIGN KEY (`plante_id`) REFERENCES `plante` (`id`),
+    FOREIGN KEY (`property_id`) REFERENCES `symptome` (`id`),
     PRIMARY KEY (`plante_id`, `property_id`)
 );
 
-CREATE TABLE `Compo_tisane` (
+CREATE TABLE `compo_tisane` (
     `tisane_id` INT NOT NULL,
     `plante_id` INT NOT NULL,
     `quantite` decimal(5, 2),
-    FOREIGN KEY (`tisane_id`) REFERENCES `Tisanes` (`id`),
-    FOREIGN KEY (`plante_id`) REFERENCES `plants` (`id`)
+    FOREIGN KEY (`tisane_id`) REFERENCES `tisane` (`id`),
+    FOREIGN KEY (`plante_id`) REFERENCES `plante` (`id`)
 );
--- Insérer des données dans la table `plants`
+-- Insérer des données dans la table `plante`
 INSERT INTO
-    `plants` (
+    `plante` (
         `name`,
         `properties`,
         `dosage`,
@@ -263,9 +263,9 @@ VALUES (
         'souci.jpg'
     );
 
--- Insérer des données dans la table `symptomes`
+-- Insérer des données dans la table `symptome`
 INSERT INTO
-    `symptomes` (`name`)
+    `symptome` (`name`)
 VALUES ('Stress'),
     ('Problèmes digestifs'),
     ('Inflammation'),
@@ -279,9 +279,9 @@ VALUES ('Stress'),
     ('Problèmes de sommeil'),
     ('Fatigue');
 
--- Insérer des données dans la table de jointure `Properties_plants`
+-- Insérer des données dans la table de jointure `propertiesPlante`
 INSERT INTO
-    `Properties_plants` (`plante_id`, `property_id`)
+    `propertiesPlante` (`plante_id`, `property_id`)
 VALUES
     -- Moringa
     (1, 6), -- Hypertension

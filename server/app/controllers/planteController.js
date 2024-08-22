@@ -3,8 +3,8 @@ const tables = require("../../database/tables");
 // Browse (Lister toutes les plantes)
 const browse = async (req, res) => {
   try {
-    const plants = await tables.plants.findAll();
-    res.json(plants);
+    const plantes = await tables.plante.readAll();
+    res.json(plantes);
   } catch (error) {
     res
       .status(500)
@@ -18,9 +18,9 @@ const browse = async (req, res) => {
 // Read (Lire une plante spécifique)
 const read = async (req, res) => {
   try {
-    const plant = await tables.plants.findById(req.params.id);
-    if (plant) {
-      res.json(plant);
+    const plante = await tables.plante.readById(req.params.id);
+    if (plante) {
+      res.json(plante);
     } else {
       res.status(404).json({ message: "Plante non trouvée." });
     }
@@ -44,7 +44,7 @@ const read = async (req, res) => {
 const getPlantesBySymptome = async (req, res) => {
   const { symptomeId } = req.params;
   try {
-    const plantes = await tables.plants.getBySymptome(symptomeId);
+    const plantes = await tables.plante.getBySymptome(symptomeId);
     if (plantes.length > 0) {
       res.json(plantes);
     } else {
