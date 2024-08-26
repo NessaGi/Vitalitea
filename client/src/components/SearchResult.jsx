@@ -1,27 +1,39 @@
 /* eslint-disable react/require-default-props */
-import PropTypes from 'prop-types';
-import PlantCard from './PlantCard';
-import '../styles/searchResult.css';
+import { Link } from 'react-router-dom';
+import PropTypes from "prop-types";
+import PlantCard from "./PlantCard";
+import "../styles/searchResult.css";
 
 function SearchResults({
+  selectedSymptom,
   plante = [], // Utilisation de paramètres par défaut pour 'plante'
   onFavoriteClick = () => {}, // Utilisation de paramètres par défaut pour 'onFavoriteClick'
-  onCartClick = () => {} // Utilisation de paramètres par défaut pour 'onCartClick'
+  onCartClick = () => {}, // Utilisation de paramètres par défaut pour 'onCartClick'
 }) {
   if (plante.length === 0) {
-    return <p className="no-results">Aucune plante trouvée pour ce symptôme.</p>;
+    return (
+      <p className="no-results">Aucune plante trouvée pour ce symptôme.</p>
+    );
   }
 
   return (
-    <div className="plants-grid">
-      {plante.map((pl) => (
-        <PlantCard
-          key={pl.id}
-          plant={pl}
-          onFavoriteClick={onFavoriteClick}
-          onCartClick={onCartClick}
-        />
-      ))}
+    <div className="search-results-container">
+      {selectedSymptom && (
+        <h2 className="results-title">
+          Plantes associées à : {selectedSymptom.name}
+        </h2>
+      )}
+      <div className="plants-grid">
+        {plante.map((pl) => (
+          <Link to={`/detail/${pl.id}`} key={pl.id}>
+            <PlantCard
+              plant={pl}
+              onFavoriteClick={onFavoriteClick}
+              onCartClick={onCartClick}
+            />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

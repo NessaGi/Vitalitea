@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
-import SearchPage from './pages/SearchPage'; 
+import SearchPage from './pages/SearchPage';
+import DetailPage from './pages/DetailPage';
 
 import './App.css'; 
 
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: "/resultats",
         element: <SearchPage />,
+      },
+      {
+        path: "/detail/:id",
+        element: <DetailPage />,
       },
     ],
   },

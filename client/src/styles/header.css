@@ -19,7 +19,7 @@
   display: flex;
   justify-content: center;
   .logo {
-    height: 100px;
+    height: 90px;
   }
 }
 
@@ -48,7 +48,7 @@
 }
 
 .desktop-only {
-  display: block;
+  display: grid;
 }
 
 .mobile-only {
@@ -66,7 +66,7 @@
 
   .header-logo {
     order: 1;
-    height: 70px;
+    height: 80px;
     margin-left: 100px;
   }
 
@@ -84,12 +84,13 @@
     font-size: 0.6rem;
     order: 3;
     margin-left: initial;
+    margin-top: 5px;
   }
 
   .header-searchbar {
     order: 4;
     width: 100%;
-    display: block;
+    display: grid;
   }
 
   .desktop-only {
@@ -97,7 +98,7 @@
   }
 
   .mobile-only {
-    display: block;
+    display: grid;
     text-align: center;
   }
 }

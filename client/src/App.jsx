@@ -20,7 +20,7 @@ function App() {
         return "TOUTES NOS PLANTES";
       case "/conseils":
         return "CONSEILS BIEN-ÊTRE";
-      case "/details":
+      case "/detail/1":
         return "EN SAVOIR PLUS";
       case "/mes-tisanes":
         return "CONCOCTE TA TISANE";
