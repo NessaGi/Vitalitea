@@ -1,0 +1,36 @@
+.banner {
+  position: relative;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  animation: slideInFromLeft 1s ease-out forwards;
+  opacity: 0;
+}
+
+.banner__title {
+  font-size: 2rem;
+  color: white;
+  padding: 1rem;
+  font-family: var(--font-title);
+}
+
+/* Définition de l'animation */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner__title {
+    font-size: 1.5rem;
+  }
+}

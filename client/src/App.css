@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;500;600;700&family=Handlee&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  --main-bg-color: #fffdf9;
+  --main-text-color: black;
+  --font-title: "Handlee", sans serif;
+  --font-text: "Athiti", sans serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5px;
+  border-bottom: 1px solid #b4d3ba;
+  color: black;
+  font-family: var(--font-text);
+  a {
+    color: var(--main-text-color);
+    text-decoration-line: none;
+  }
+  a:hover {
+    font-weight: bold;
+  }
+}

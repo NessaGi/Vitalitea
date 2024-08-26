@@ -1,0 +1,86 @@
+.search-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-family: var(--font-text);
+  font-weight: 500;
+  padding: 20px 0px;
+}
+
+/* Style for the symptoms list */
+.symptomes-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.symptomes-list li {
+  background-color: #e8f5e9;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.symptomes-list li:hover {
+  background-color: #c8e6c9;
+}
+
+/* Style for the plants list */
+.plantes-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.plantes-list li {
+  background-color: #fafafa;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.plantes-list li:hover {
+  background-color: #f1f8e9;
+}
+
+/* Heading styles specific to SearchPage */
+.search-heading {
+  color: #3a5a40;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-container {
+    padding: 20px;
+  }
+
+  .symptomes-list li,
+  .plantes-list li {
+    flex: 1 1 100%;
+  }
+
+  .search-heading {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-family: var(--font-text);
+    font-size: 1rem;
+    padding: 20px 0px;
+  }
+}
