@@ -132,7 +132,7 @@ VALUES (
         'Gingembre',
         'Antioxydant, anti-nauséeux',
         'gingembre.jpg',
-        'Le Gingembre est un puissant antioxydant et anti-inflammatoire naturel. Il est surtout connu pour son efficacité à soulager les nausées, qu\'elles soient liées au mal des transports, à la grossesse ou à des troubles digestifs. Il stimule également la circulation sanguine.',
+        'Le Gingembre est un puissant antioxydant et anti-inflammatoire naturel. Il est surtout connu pour son efficacité à soulager les Nausees, qu\'elles soient liées au mal des transports, à la grossesse ou à des troubles digestifs. Il stimule également la circulation sanguine.',
         6.90,
         100
     ),
@@ -154,9 +154,9 @@ VALUES (
     ),
     (
         'Ortie',
-        'Riche en fer, combat l\'anémie',
+        'Riche en fer, combat l\'Anemie',
         'ortie.png',
-        'L\'Ortie est une plante très nutritive, particulièrement riche en fer, en vitamines A et C. Elle est utilisée pour lutter contre l\'anémie, renforcer les cheveux et les ongles, et purifier le sang. Elle a également des propriétés diurétiques et anti-inflammatoires.',
+        'L\'Ortie est une plante très nutritive, particulièrement riche en fer, en vitamines A et C. Elle est utilisée pour lutter contre l\'Anemie, renforcer les cheveux et les ongles, et purifier le sang. Elle a également des propriétés diurétiques et anti-inflammatoires.',
         6.90,
         100
     ),
@@ -309,16 +309,16 @@ VALUES (
 INSERT INTO
     `symptome` (`name`)
 VALUES ('Stress'),
-    ('Problèmes digestifs'),
+    ('Problemes digestifs'),
     ('Inflammation'),
-    ('Nausées'),
+    ('Nausees'),
     ('Infections respiratoires'),
     ('Hypertension'),
-    ('Cholestérol'),
-    ('Diabète'),
-    ('Anémie'),
+    ('Cholesterol'),
+    ('Diabete'),
+    ('Anemie'),
     ('Douleurs articulaires'),
-    ('Problèmes de sommeil'),
+    ('Problemes de sommeil'),
     ('Fatigue');
 
 -- Insérer des données dans la table de jointure `propertiesPlante`
@@ -327,78 +327,78 @@ INSERT INTO
 VALUES
     -- Moringa
     (1, 6), -- Hypertension
-    (1, 7), -- Cholestérol
+    (1, 7), -- Cholesterole
     -- Artémisia
     (2, 5), -- Infections respiratoires
     -- Laurier
-    (3, 2), -- Problèmes digestifs
+    (3, 2), -- Problemes digestifs
     (3, 3), -- Inflammation
     -- Pain de singe
-    (4, 4), -- Nausées
-    (4, 9), -- Anémie
+    (4, 4), -- Nausees
+    (4, 9), -- Anemie
     -- Khamaré (Vétiver)
-    (5, 2), -- Problèmes digestifs
+    (5, 2), -- Problemes digestifs
     (5, 3), -- Inflammation
     -- Camomille
     (6, 1), -- Stress
-    (6, 2), -- Problèmes digestifs
+    (6, 2), -- Problemes digestifs
     -- Menthe Poivrée
-    (7, 2), -- Problèmes digestifs
+    (7, 2), -- Problemes digestifs
     (7, 3), -- Inflammation
     -- Thym
     (8, 5), -- Infections respiratoires
     -- Gingembre
-    (9, 4), -- Nausées
+    (9, 4), -- Nausees
     (9, 3), -- Inflammation
     -- Lavande
     (10, 1), -- Stress
-    (10, 11), -- Problèmes de sommeil
+    (10, 11), -- Problemes de sommeil
     -- Rooibos
-    (11, 9), -- Anémie
+    (11, 9), -- Anemie
     (11, 12), -- Fatigue
     -- Ortie
-    (12, 9), -- Anémie
+    (12, 9), -- Anemie
     (12, 10), -- Douleurs articulaires
     -- Sauge
-    (13, 11), -- Problèmes de sommeil
+    (13, 11), -- Problemes de sommeil
     -- Romarin
     (14, 3), -- Inflammation
     (14, 12), -- Fatigue
     -- Verveine
     (15, 1), -- Stress
-    (15, 2), -- Problèmes digestifs
+    (15, 2), -- Problemes digestifs
     -- Mélisse
     (16, 1), -- Stress
-    (16, 11), -- Problèmes de sommeil
+    (16, 11), -- Problemes de sommeil
     -- Eucalyptus
     (17, 5), -- Infections respiratoires
     -- Basilic
-    (18, 2), -- Problèmes digestifs
+    (18, 2), -- Problemes digestifs
     -- Fenouil
-    (19, 2), -- Problèmes digestifs
+    (19, 2), -- Problemes digestifs
     -- Citronnelle
-    (20, 2), -- Problèmes digestifs
-    (20, 4), -- Nausées
+    (20, 2), -- Problemes digestifs
+    (20, 4), -- Nausees
     -- Cannelle
     (21, 8), -- Diabète
-    (21, 7), -- Cholestérol
+    (21, 7), -- Cholesterole
     -- Clou de Girofle
     (22, 10), -- Douleurs articulaires
     -- Curcuma
     (23, 3), -- Inflammation
-    (23, 7), -- Cholestérol
+    (23, 7), -- Cholesterole
     -- Ginseng
     (24, 12), -- Fatigue
     -- Aloe Vera
-    (25, 9), -- Anémie
-    (25, 4), -- Nausées
+    (25, 9), -- Anemie
+    (25, 4), -- Nausees
     -- Échinacée
     (26, 3), -- Inflammation
     (26, 5), -- Infections respiratoires
     -- Reine des Prés
     (27, 10), -- Douleurs articulaires
     -- Valériane
-    (28, 11), -- Problèmes de sommeil
+    (28, 11), -- Problemes de sommeil
     -- Passiflore
     (29, 1), -- Stress
     -- Souci

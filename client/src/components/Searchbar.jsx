@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import PropTypes from "prop-types";
-import "../styles/searchBar.css"
+import "../styles/searchBar.css";
 
-function SearchBar ({ onSymptomSelect }) {
+function SearchBar({ onSymptomSelect }) {
   const [query, setQuery] = useState('');
   const [suggestions, setSuggestions] = useState([]);
 
@@ -23,7 +23,11 @@ function SearchBar ({ onSymptomSelect }) {
   }, [query]);
 
   const handleSelect = (symptom) => {
-    onSymptomSelect(symptom);
+    if (typeof onSymptomSelect === 'function') {
+      onSymptomSelect(symptom);
+    } else {
+      console.error('onSymptomSelect is not a function');
+    }
     setQuery(symptom.name);
     setSuggestions([]);
   };
@@ -53,7 +57,7 @@ function SearchBar ({ onSymptomSelect }) {
       )}
     </div>
   );
-};
+}
 
 SearchBar.propTypes = {
   onSymptomSelect: PropTypes.func.isRequired,

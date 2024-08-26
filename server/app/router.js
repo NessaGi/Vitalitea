@@ -16,4 +16,10 @@ router.get("/plantes/symptome", symptomeController.getPlantesBySymptomeName);
 // Route pour obtenir les détails d'une plante par ID
 router.get("/plantes/:id", planteController.getPlanteById);
 
+// Route pour récupérer les propriétés des plantes
+router.get("/propertiesPlante", planteController.getProperties); // Assurez-vous que cette route existe
+
+// Route pour récupérer les plantes en fonction des filtres
+router.get("/plantes", planteController.getPlantesByFilters);
+
 module.exports = router;

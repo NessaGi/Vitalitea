@@ -1,16 +1,17 @@
-/* eslint-disable react/require-default-props */
-import { Link } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 import PropTypes from "prop-types";
 import PlantCard from "./PlantCard";
 import "../styles/searchResult.css";
 
 function SearchResults({
-  selectedSymptom,
-  plante = [], // Utilisation de paramètres par défaut pour 'plante'
-  onFavoriteClick = () => {}, // Utilisation de paramètres par défaut pour 'onFavoriteClick'
-  onCartClick = () => {}, // Utilisation de paramètres par défaut pour 'onCartClick'
+  selectedSymptom = { id: null, name: 'Tous les symptômes' }, // Valeur par défaut pour selectedSymptom
+  onFavoriteClick = () => {}, // Valeur par défaut pour onFavoriteClick
+  onCartClick = () => {}, // Valeur par défaut pour onCartClick
 }) {
-  if (plante.length === 0) {
+  // Récupérer les plantes depuis le contexte d'Outlet
+  const { plante } = useOutletContext();
+
+  if (!plante || plante.length === 0) {
     return (
       <p className="no-results">Aucune plante trouvée pour ce symptôme.</p>
     );
@@ -43,6 +44,7 @@ SearchResults.propTypes = {
     id: PropTypes.number,
     name: PropTypes.string,
   }).isRequired,
+  // eslint-disable-next-line react/no-unused-prop-types
   plante: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -55,6 +57,10 @@ SearchResults.propTypes = {
   onCartClick: PropTypes.func,
 };
 
-// Supprimer l'utilisation de defaultProps
+SearchResults.defaultProps = {
+  plante: [],
+  onFavoriteClick: () => {},
+  onCartClick: () => {},
+};
 
 export default SearchResults;
