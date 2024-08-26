@@ -25,17 +25,13 @@ function SearchPage() {
 
   return (
     <div>
-      {symptomName && (
-        <>
-          <h2>Plantes associées au symptôme : {symptomName}</h2>
           <SearchResults
             selectedSymptom={{ name: symptomName }} // Passe le nom du symptôme comme prop
             plante={plante}
             onFavoriteClick={() => {}}
             onCartClick={() => {}}
           />
-        </>
-      )}
+        <div/>
     </div>
   );
 }

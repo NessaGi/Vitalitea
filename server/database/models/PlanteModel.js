@@ -3,7 +3,7 @@ const AbstractModel = require("./AbstractModel");
 class PlanteModel extends AbstractModel {
   constructor() {
     // Appelle le constructeur de AbstractModel avec le nom de la table
-    super({ table: "plante" });
+    super({ table: "plantes" });
   }
 
   // Méthode pour récupérer les plantes par symptôme

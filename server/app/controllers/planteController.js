@@ -61,8 +61,28 @@ const getPlantesBySymptome = async (req, res) => {
       });
   }
 };
+
+// Fonction pour récupérer une plante par son ID
+const getPlanteById = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const query = 'SELECT * FROM plante WHERE id = ?';
+    const [results] = await tables.plante.database.execute(query, [id]);
+
+    if (results.length === 0) {
+      return res.status(404).json({ message: 'Plante non trouvée' });
+    }
+
+    return res.status(200).json(results[0]);
+  } catch (error) {
+    console.error('Erreur lors de la récupération de la plante :', error);
+    return res.status(500).json({ message: 'Erreur serveur', error: error.toString() });
+  }
+};
+
 module.exports = {
   browse,
   read,
   getPlantesBySymptome,
+  getPlanteById
 };
