@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropTypes from "prop-types";
-
+import "../styles/searchBar.css"
 
 function SearchBar ({ onSymptomSelect }) {
   const [query, setQuery] = useState('');
@@ -29,18 +29,20 @@ function SearchBar ({ onSymptomSelect }) {
   };
 
   return (
-    <div className="search-bar">
+    <div className="search-bar-container">
       <input
         type="text"
+        className="search-input"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder="Recherchez un symptôme..."
+        placeholder="Entrez un symptôme..."
       />
       {suggestions.length > 0 && (
         <ul className="suggestions-list">
           {suggestions.map((symptom) => (
             <button
               type="button"
+              className="suggestion-item"
               key={symptom.id}
               onClick={() => handleSelect(symptom)}
             >

@@ -1,29 +1,40 @@
-import { useState } from 'react';
-import SearchBar from '../components/Searchbar';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import SearchResults from '../components/SearchResult';
+import "../styles/searchPage.css"
 
 function SearchPage() {
-  // État pour stocker le symptôme sélectionné
-  const [selectedSymptom, setSelectedSymptom] = useState(null);
+  const [searchParams] = useSearchParams();
+  const [plante, setPlante] = useState([]);
+  const symptomName = searchParams.get('symptom');
 
-  // Fonction de gestion de la sélection d'un symptôme
-  const handleSymptomeSelect = (symptome) => {
-    setSelectedSymptom(symptome);
-  };
+  useEffect(() => {
+    if (symptomName) {
+      // Fetch des plantes associées au symptôme sélectionné par nom
+      fetch(`${import.meta.env.VITE_API_URL}/api/plantes/symptome?name=${encodeURIComponent(symptomName)}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Symptôme non trouvé");
+          }
+          return response.json();
+        })
+        .then((data) => setPlante(data))
+        .catch((error) => console.error('Erreur lors de la récupération des plantes:', error));
+    }
+  }, [symptomName]);
 
   return (
     <div>
-      <h1>Recherche de Plantes par Symptôme</h1>
-      
-      {/* Composant pour la barre de recherche */}
-      <SearchBar onSymptomSelect={handleSymptomeSelect} />
-      
-      {/* Afficher la liste des plantes seulement si un symptôme est sélectionné */}
-      {selectedSymptom && (
-        <div>
-          <h2>Plantes associées au symptôme : {selectedSymptom.name}</h2>
-          <SearchResults selectedSymptom={selectedSymptom} />
-        </div>
+      {symptomName && (
+        <>
+          <h2>Plantes associées au symptôme : {symptomName}</h2>
+          <SearchResults
+            selectedSymptom={{ name: symptomName }} // Passe le nom du symptôme comme prop
+            plante={plante}
+            onFavoriteClick={() => {}}
+            onCartClick={() => {}}
+          />
+        </>
       )}
     </div>
   );

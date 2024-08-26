@@ -6,6 +6,12 @@
   margin-bottom: 20px;
 }
 
+h2 {
+  font-family: var(--font-text);
+  font-weight: 500;
+  padding: 20px 0px;
+}
+
 /* Style for the symptoms list */
 .symptomes-list {
   list-style-type: none;
@@ -70,5 +76,11 @@
 
   .search-heading {
     font-size: 1.5rem;
+  }
+
+  h2 {
+    font-family: var(--font-text);
+    font-size: 1rem;
+    padding: 20px 0px;
   }
 }

@@ -1,40 +1,48 @@
-import { useState, useEffect } from 'react';
-import PropTypes from "prop-types";
+/* eslint-disable react/require-default-props */
+import PropTypes from 'prop-types';
+import PlantCard from './PlantCard';
+import '../styles/searchResult.css';
 
-
-function SearchResults ({ selectedSymptom }) {
-  const [plants, setPlants] = useState([]);
-
-  useEffect(() => {
-    if (selectedSymptom) {
-      fetch(`${import.meta.env.VITE_API_URL}/api/plantes/symptome/${selectedSymptom.id}`)
-        .then((response) => response.json())
-        .then((data) => setPlants(data))
-        .catch((error) => console.error('Erreur:', error));
-    }
-  }, [selectedSymptom]);
+function SearchResults({
+  plante = [], // Utilisation de paramètres par défaut pour 'plante'
+  onFavoriteClick = () => {}, // Utilisation de paramètres par défaut pour 'onFavoriteClick'
+  onCartClick = () => {} // Utilisation de paramètres par défaut pour 'onCartClick'
+}) {
+  if (plante.length === 0) {
+    return <p className="no-results">Aucune plante trouvée pour ce symptôme.</p>;
+  }
 
   return (
-    <div className="search-results">
-      {plants.length > 0 ? (
-        <ul className="plants-list">
-          {plants.map((plant) => (
-            <li key={plant.id} className="plant-item">
-              <img src={`${import.meta.env.VITE_API_URL}/images/${plant.image_url}`} alt={plant.name} />
-              <h3>{plant.name}</h3>
-              <p>{plant.properties}</p>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>Aucune plante trouvée pour ce symptôme.</p>
-      )}
+    <div className="plants-grid">
+      {plante.map((pl) => (
+        <PlantCard
+          key={pl.id}
+          plant={pl}
+          onFavoriteClick={onFavoriteClick}
+          onCartClick={onCartClick}
+        />
+      ))}
     </div>
   );
-};
+}
 
 SearchResults.propTypes = {
-  selectedSymptom: PropTypes.func.isRequired,
+  selectedSymptom: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+  }).isRequired,
+  plante: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      properties: PropTypes.string.isRequired,
+      image_url: PropTypes.string.isRequired,
+    })
+  ),
+  onFavoriteClick: PropTypes.func,
+  onCartClick: PropTypes.func,
 };
+
+// Supprimer l'utilisation de defaultProps
 
 export default SearchResults;

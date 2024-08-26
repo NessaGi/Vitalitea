@@ -75,7 +75,7 @@ VALUES (
     (
         'Artémisia',
         'Antipaludique, stimule le système immunitaire',
-        'artemisia.jpg',
+        'artemisia.jpeg',
         'L\'Artémisia est largement reconnu pour ses propriétés antipaludiques naturelles. En plus de lutter contre le paludisme, cette plante stimule le système immunitaire et peut être utilisée pour traiter diverses infections grâce à ses composés actifs puissants.',
         6.90,
         100
@@ -92,7 +92,7 @@ VALUES (
         'Pain de singe',
         'Antioxydant, riche en vitamine C',
         'pain_de_singe.jpg',
-        'Le Pain de singe, ou fruit du baobab, est extrêmement riche en vitamine C et en antioxydants. Ce superaliment aide à combattre les radicaux libres, renforce le système immunitaire, et améliore l\'énergie globale tout en favorisant la santé digestive.',
+        'Le Pain de singe, ou fruit du baobab, ou bouye, est extrêmement riche en vitamine C et en antioxydants. Ce superaliment aide à combattre les radicaux libres, renforce le système immunitaire, et améliore l\'énergie globale tout en favorisant la santé digestive.',
         6.90,
         100
     ),
@@ -100,14 +100,14 @@ VALUES (
         'Khamaré (Vétiver)',
         'Antiseptique, aide à la digestion',
         'khamare.jpg',
-        'Le Khamaré, également connu sous le nom de Vétiver, est une plante aux propriétés antiseptiques puissantes. Elle est couramment utilisée pour améliorer la digestion et purifier le corps, grâce à ses capacités à stimuler le système digestif et à apaiser les maux d\'estomac.',
+        'Le Khamaré, également connu sous le nom de Vétiver ou Gongolili, est une plante aux propriétés antiseptiques puissantes. Elle est couramment utilisée pour améliorer la digestion et purifier le corps, grâce à ses capacités à stimuler le système digestif et à apaiser les maux d\'estomac.',
         6.90,
         100
     ),
     (
         'Camomille',
         'Apaisante, aide à la digestion',
-        'camomille.jpg',
+        'camomille.png',
         'La Camomille est célèbre pour ses propriétés apaisantes et relaxantes. Elle est souvent consommée sous forme d\'infusion pour calmer les nerfs, faciliter la digestion, et aider à soulager les insomnies légères. C\'est un remède naturel pour les troubles digestifs et l\'anxiété.',
         6.90,
         100
@@ -155,7 +155,7 @@ VALUES (
     (
         'Ortie',
         'Riche en fer, combat l\'anémie',
-        'ortie.jpg',
+        'ortie.png',
         'L\'Ortie est une plante très nutritive, particulièrement riche en fer, en vitamines A et C. Elle est utilisée pour lutter contre l\'anémie, renforcer les cheveux et les ongles, et purifier le sang. Elle a également des propriétés diurétiques et anti-inflammatoires.',
         6.90,
         100
@@ -179,7 +179,7 @@ VALUES (
     (
         'Verveine',
         'Apaisante, aide à la digestion',
-        'verveine.jpg',
+        'verveine.jpeg',
         'La Verveine est connue pour ses effets apaisants et relaxants. Elle est souvent utilisée en infusion pour calmer les tensions nerveuses, faciliter la digestion et favoriser un sommeil réparateur. C\'est une plante idéale pour se détendre après une longue journée.',
         6.90,
         100
@@ -211,15 +211,15 @@ VALUES (
     (
         'Fenouil',
         'Aide à la digestion, réduit les coliques',
-        'fenouil.jpg',
-        'Le Fenouil est une plante reconnue pour ses bienfaits sur le système digestif. Il aide à soulager les ballonnements, les coliques et les troubles digestifs. En infusion, il est souvent recommandé pour les bébés souffrant de coliques ou pour les personnes ayant des troubles digestifs.',
+        'fenouil.png',
+        'Le Fenouil est une plante reconnue pour ses bienfaits sur le système digestif. Les graines aident à soulager les ballonnements, les coliques et les troubles digestifs. En infusion, il est souvent recommandé pour les bébés souffrant de coliques ou pour les personnes ayant des troubles digestifs.',
         6.90,
         100
     ),
     (
         'Citronnelle',
         'Anti-moustique, aide à la digestion',
-        'citronnelle.jpg',
+        'citronnelle.png',
         'La Citronnelle est connue pour son arôme citronné et ses propriétés répulsives contre les moustiques. En infusion, elle est également bénéfique pour la digestion et aide à réduire les spasmes digestifs. C\'est une plante rafraîchissante, souvent utilisée en tisane ou en cuisine.',
         6.90,
         100
@@ -259,7 +259,7 @@ VALUES (
     (
         'Aloe Vera',
         'Hydratant, bon pour la peau',
-        'aloe_vera.jpg',
+        'aloe_vera.jpeg',
         'L\'Aloe Vera est une plante succulente reconnue pour ses propriétés hydratantes et apaisantes. Elle est largement utilisée en cosmétique pour nourrir la peau, traiter les brûlures et les irritations. En interne, elle aide à apaiser les troubles digestifs et à renforcer l\'immunité.',
         6.90,
         100
@@ -275,7 +275,7 @@ VALUES (
     (
         'Reine des Prés',
         'Antirhumatismale, diurétique',
-        'reine_des_pres.jpg',
+        'reine_des_pres.png',
         'La Reine des Prés est une plante aux propriétés antirhumatismales et diurétiques. Elle est utilisée pour soulager les douleurs articulaires et musculaires, ainsi que pour éliminer l\'excès d\'eau dans le corps. En infusion, elle est idéale pour les personnes souffrant d\'arthrite ou de rétention d\'eau.',
         6.90,
         100
@@ -283,7 +283,7 @@ VALUES (
     (
         'Valériane',
         'Calmante, aide à l\'endormissement',
-        'valeriane.jpg',
+        'valeriane.png',
         'La Valériane est une plante médicinale reconnue pour ses effets calmants et sédatifs. Elle est souvent utilisée pour traiter l\'insomnie, l\'anxiété et les troubles nerveux. En infusion, elle aide à induire un sommeil réparateur et à calmer les tensions nerveuses.',
         6.90,
         100

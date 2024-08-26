@@ -24,6 +24,13 @@ class SymptomeModel extends AbstractModel {
     const [rows] = await this.database.execute(query, [symptomeId]);
     return rows;
   }
+
+  // Méthode pour récupérer un symptôme par nom
+  async findByName(name) {
+    const query = `SELECT * FROM ${this.table} WHERE LOWER(name) LIKE LOWER(?)`;
+    const [rows] = await this.database.execute(query, [`%${name}%`]);
+    return rows;
+  }
 }
 
 module.exports = SymptomeModel;

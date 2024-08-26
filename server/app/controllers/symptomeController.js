@@ -10,23 +10,24 @@ const browse = async (req, res) => {
   }
 };
 
-// Read (Lire une donnée spécifique)
-const read = async (req, res) => {
-  const { id } = req.params;
+// Récupérer un symptôme par nom
+const getPlantesBySymptomeName = async (req, res) => {
+  const { name } = req.query;
   try {
-    const symptome = await tables.symptome.readById(id);
-    if (symptome) {
-      res.status(200).json(symptome);
+    const symptomes = await tables.symptome.findByName(name);
+    if (symptomes.length > 0) {
+      const symptomeId = symptomes[0].id; // On suppose que le premier résultat est correct
+      const plantes = await tables.symptome.getBySymptome(symptomeId);
+      if (plantes.length > 0) {
+        res.json(plantes);
+      } else {
+        res.status(404).json({ message: "Aucune plante trouvée pour ce symptôme" });
+      }
     } else {
-      res.status(404).json({
-        message: "error.message",
-      });
+      res.status(404).json({ message: "Symptôme non trouvé" });
     }
   } catch (error) {
-    res.status(500).json({
-      error: "Internal Server Error",
-      details: "err.message",
-    });
+    res.status(500).json({ message: "Erreur lors de la récupération des plantes", error: error.message });
   }
 };
 
@@ -45,13 +46,10 @@ const getPlantesBySymptome = async (req, res) => {
   }
 };
 
-// Edit (Modifier une donnée)
 
-// Add (Ajouter une donnée)
-
-// Delete (Supprimer une donnée)
+// Exportation des fonctions
 module.exports = {
   browse,
-  read,
-  getPlantesBySymptome
+  getPlantesBySymptomeName,
+  getPlantesBySymptome,
 };
